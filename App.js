@@ -33,17 +33,14 @@ export default function App() {
     );
   }
 
-  // Passo 3: Função para limpar todos os objetivos
   function clearAllHandler() {
     setCourseGoals([]);
   }
 
   return (
     <View style={styles.appContainer}>
-      {/* Passo 1: Cabeçalho com prop titulo (String) e corFundo (String) */}
       <Header titulo="Meus Objetivos de 2026" corFundo="#311b6b" />
 
-      {/* Passo 2: Contador com prop quantidade (Número) */}
       <GoalCount quantidade={courseGoals.length} />
 
       <GoalInput
@@ -77,7 +74,6 @@ export default function App() {
           <Text style={styles.addButtonText}>+ Adicionar Objetivo</Text>
         </Pressable>
 
-        {/* Desafio Extra: ClearButton só aparece se houver pelo menos 1 objetivo */}
         {courseGoals.length > 0 && (
           <ClearButton onClear={clearAllHandler} />
         )}
